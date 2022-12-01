@@ -75,9 +75,6 @@ class MaximumCategoriesTest {
         client = gson.fromJson("{\"title\": \"Книга\", \"date\": \"" + currentDate + "\", \"sum\": 350}", ProductBuy.class);
         maximumCategories.readJsonFile(client);
 
-        Assertions.assertEquals("\"maxCategory\": {" +
-                "    \"category\": \"" + "одежда" + "\"," +
-                "    \"sum\": \"" + "850" + "\"" +
-                "  }", maximumCategories.stringToJson());
+        Assertions.assertEquals("\"maxCategory\": {" + "    \"category\": \"" + "одежда" + "\"," + "    \"sum\": \"" + "850" + "\"" + "  }", maximumCategories.stringToJson());
     }
 }

@@ -19,9 +19,7 @@ public class Main {
 
             while (true) {
                 try (Socket socket = serverSocket.accept(); // ждем подключения
-                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                     PrintWriter out = new PrintWriter(socket.getOutputStream(),true);)
-                {
+                     BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream())); PrintWriter out = new PrintWriter(socket.getOutputStream(), true);) {
                     String input = in.readLine();
                     ProductBuy client = gson.fromJson(input, ProductBuy.class);
                     maximumCategories.readJsonFile(client);

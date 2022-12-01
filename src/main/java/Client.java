@@ -11,9 +11,7 @@ public class Client {
 
     public static void main(String[] args) throws IOException {
         while (true) {
-            try (Socket clientSocket = new Socket(HOST, PORT);
-                 PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                 BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
+            try (Socket clientSocket = new Socket(HOST, PORT); PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true); BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
                 BufferedReader scanner = new BufferedReader(new InputStreamReader(System.in));
 
@@ -28,8 +26,7 @@ public class Client {
                     String date = nowDate();
                     int sum = Integer.parseInt(scannerReader[1]);
 
-                    out.println("{\"title\": \"" + product + "\", \"date\": \"" + date + "\", " +
-                            "\"sum\": " + sum + "}");
+                    out.println("{\"title\": \"" + product + "\", \"date\": \"" + date + "\", " + "\"sum\": " + sum + "}");
                     System.out.println("Данные о покупке переданы");
                     System.out.println(in.readLine());
 
@@ -39,6 +36,7 @@ public class Client {
             }
         }
     }
+
     public static String nowDate() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy.MM.dd");
         LocalDateTime now = LocalDateTime.now();

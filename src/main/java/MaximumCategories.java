@@ -31,16 +31,12 @@ public class MaximumCategories implements Serializable {
             categoriesTsv.put(productBuy.title, "другое");
             categoryJson.put("другое", newCategory);
         }
-        System.out.println("Товар \"" + productBuy.title + "\", приобретённый на сумму " + productBuy.sum +
-                " р., занесён в категорию \"" + categoriesTsv.get(productBuy.title) + "\".");
+        System.out.println("Товар \"" + productBuy.title + "\", приобретённый на сумму " + productBuy.sum + " р., занесён в категорию \"" + categoriesTsv.get(productBuy.title) + "\".");
     }
 
     public String stringToJson() {
         Category category = mapValueMax();
-        return "\"maxCategory\": {" +
-                "    \"category\": \"" + category.getCategoryName() + "\"," +
-                "    \"sum\": \"" + category.getSum() + "\"" +
-                "  }";
+        return "\"maxCategory\": {" + "    \"category\": \"" + category.getCategoryName() + "\"," + "    \"sum\": \"" + category.getSum() + "\"" + "  }";
     }
 
     public void readTsvFile() throws FileNotFoundException {  //считываем categories.tsv
