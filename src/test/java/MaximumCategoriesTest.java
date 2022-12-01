@@ -15,10 +15,6 @@ class MaximumCategoriesTest {
     public String currentDate = Client.nowDate();
     MaximumCategories maximumCategories = new MaximumCategories();
 
-    MaximumCategoriesTest() throws IOException {
-    }
-
-
     @BeforeEach
     void setUp() throws IOException {
         maximumCategories.readTsvFile();
